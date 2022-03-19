@@ -1,0 +1,61 @@
+
+
+
+#include <iostream>
+#include <list>
+using namespace std;
+
+class Party
+{
+
+    public:
+
+    int meals;
+    void Food()
+    {
+        cout << "Enter number of meals" ;
+        cin >> meals;
+    }
+
+
+};
+class Drinks
+{
+    public:
+    int drink;
+
+    void Liquor()
+    {
+        cout << "Enter the number of Drinks ";
+        cin >> drink;
+
+    }
+
+};
+class  Bill: public Party, public Drinks
+{
+    int totalMeals;
+    int totalDrinks;
+    int totalBills;
+
+    public:
+    void total()
+    {
+        totalMeals = meals * 90;
+        totalDrinks = drink * 60;
+        totalBills = totalDrinks + totalMeals;
+        cout << "The Total Bill for the Party is " << totalBills << endl;
+    }
+
+
+};
+
+int main ()
+{
+    Bill b;
+    b.Food();
+    b.Liquor();
+    b.total();
+
+    return 0;
+}
